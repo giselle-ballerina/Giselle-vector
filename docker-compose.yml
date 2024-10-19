@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  grpc-service:
+    build: .
+    ports:
+      - "50051:50051"
+    environment:
+      - MONGODB_URI=mongodb+srv://nipuna21:giselle123@cluster0.a9vxy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      - PINECONE_API_KEY=b96a2456-baab-4784-882e-7162b0d9f3f0
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

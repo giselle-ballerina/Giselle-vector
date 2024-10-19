@@ -1,0 +1,6 @@
+grpcio
+grpcio-tools
+pymongo
+sentence-transformers
+pinecone-client
+pinecone
