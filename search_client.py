@@ -4,7 +4,7 @@ import search_service_pb2_grpc
 
 def run():
     # Connect to the gRPC server
-    with grpc.insecure_channel('localhost:50051') as channel:
+    with grpc.insecure_channel('20.246.133.101:50051') as channel:
         # Create a stub (client) for the SearchService
         stub = search_service_pb2_grpc.SearchServiceStub(channel)
 
